@@ -1,7 +1,11 @@
 ---
 title: (JAVA) 문자열을 나누는 split(), subString()    
 date: 2021-02-25 16:21:00
-categories: JAVA
+categories: 
+- JAVA
+tags:
+- JAVA
+- 기초문법
 ---
 
 <p style="color:#999;">※ 제가 편하게 복습하려고 구어체로 작성했습니다.<br />
