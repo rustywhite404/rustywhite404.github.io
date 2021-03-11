@@ -48,7 +48,7 @@ tags:
 Table에서 사용시, 아래와 코드와 같이 혼합해서 사용이 가능합니다.  
 ${list}객체를 user가 받아 user 클래스 안에 있는 프로퍼티스 접근합니다.   
 
-```html    
+```
 <tbody id="docsTr">
      <tr th:if="${size} == '0'">
 		<td colspan=2>데이터가 없습니다.</td>
@@ -62,7 +62,7 @@ ${list}객체를 user가 받아 user 클래스 안에 있는 프로퍼티스 접
 **for문으로 받아온 객체값을 자바스크립트 변수에 넣을 때**  
 예) tr 태그 클릭시 화면이동 하고 싶을때, 특정 변수를 파라미터로 받아 값을 넘겨줄때!  
 th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) 그리고 getAttribute로 loadDetailView 함수 파라미터에 값을 넣어준다.  
-```html    
+```    
 <tbody id="docsTr">
      <tr th:if="${size} == '0'">
 		<td colspan=2>데이터가 없습니다.</td>
