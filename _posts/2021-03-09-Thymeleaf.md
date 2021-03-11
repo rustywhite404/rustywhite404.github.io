@@ -7,6 +7,7 @@ tags:
 - Thymeleaf 
 --- 
 ## 기본 사용법  
+
 | 종류 | 사용법 | 예시 |  
 |:--- | :--- | :--- |  
 | 변수 표현 | ${...} | ${session.user} |  
@@ -28,12 +29,16 @@ tags:
 --- 
 
 ## if/else  
+  
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | if | `<div th:if="${error}">에러발생</div> ` | 조건문처럼 사용한다. 해당 조건이 만족할 때만 출력된다. |  
 | else | `<p th:unless="${user.authType}=='facebook'" th:text="'not '+ ${user.authType}"></p>` | else |  
+  
+---  
 
 ## for  
+  
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | for | `<p th:each="user : ${users}" th:text="${user.name}"></p>` | for each문. list 안에 있는 객체가 obj로 맵핑된다 |  
@@ -85,7 +90,8 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
     </div>
 </div>
 ```
-위 예시를 보면 
+
+---  
 
 ## 배열/리스트  
 ```HTML  
@@ -124,11 +130,13 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 [그 밖에 사용 가능한 strings 메소드](https://www.thymeleaf.org/apidocs/thymeleaf/2.1.4.RELEASE/org/thymeleaf/expression/Strings.html)
 
 ## form  
+
 | 종류 | 설명 |  
 |:--- | :--- |    
 | th:action | form 태그에서 해당 경로로 요청을 보낼 때 사용 |  
 | th:object | submit을 할 때, form의 데이터가 th:object에 설정해준 객체로 받아진다. |  
 | th:field | 각각 필드들을 매핑을 해주는 역할을 한다. 설정해 준 값으로, th:object에 설정해 준 객체의 내부와 매칭해준다. |  
+
 ```HTML  
  <form th:action="@{/sign-up}" th:object="${signUpForm}" method="post">
     <div class="form-group">
@@ -147,11 +155,14 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 이런 식으로, each 문법을 사용해 select 옵션을 지정할 수 있다.
 
 ## url 관련  
+
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | URL 연결 | `<a th:href="@{/**/**}">` | 서버 내의 특정 위치로 이동 |  
 | URL + 파라미터 | `<a th:href="@{/**/**(page=1)}">` | 고정적인 값을 넘길 때 |  
 | URL + 파라미터 | `<a th:href="@{/**/**(page=${list.num})">` | 서버에서 받아온 값을 넘길때 |  
+
+---  
 
 ## Utility  
 
@@ -159,7 +170,10 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 |:--- | :--- |  
 | 캘린더 객체 사용 | `<td th:text="${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm')}"></td>` |  
 | listJoin 객체 사용 | `th:value="${#strings.listJoin(tags, ',')}"` |  
+
+
 > 위 문법은 아래의 코드를 구현한 것이다.  
+
 ```JAVA  
 List<String> tags = List.of("Spring", "JPA");
 => Spring, JPA
