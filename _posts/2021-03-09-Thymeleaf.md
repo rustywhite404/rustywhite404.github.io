@@ -7,29 +7,29 @@ tags:
 - Thymeleaf 
 --- 
 ## 기본 사용법  
-
+  
 | 종류 | 사용법 | 예시 |  
 |:--- | :--- | :--- |  
 | 변수 표현 | ${...} | ${session.user} |  
 | 선택자 | *{...} | *{firstName} |   
 | 메시지 | #{...} | #{message} |  
 | 링크 | @{...} | @{abbo.tistory.com} |  
-
+  
 --- 
 ## 자주 사용되는 타임리프 문법  
 표현식은 기본적으로 `th:[속성]="전달받은 값 또는 조건식"` 의 형태로 표현됩니다.  
-
+  
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | Text | `<span th:text="${name}"></span>` | 서버에서 받아온 값을 html 텍스트로 렌더링 |  
 | Value | th:value=${name} | input이나 select, button등의 태그 값에 서버에서 받은 값을 렌더링 |  
 | errors | ` <li th:errors="*{id}" />` | 해당 값에 error가 있는 경우 출력한다. |  
 | with | `<div th:with="var1=${user.name}+' is user name'" th:text="${var1}"></div>` | 변수값을 지정해서 사용한다. |   
-
+  
 --- 
 
 ## if/else  
-  
+    
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | if | `<div th:if="${error}">에러발생</div> ` | 조건문처럼 사용한다. 해당 조건이 만족할 때만 출력된다. |  
@@ -38,10 +38,11 @@ tags:
 ---  
 
 ## for  
-  
+   
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | for | `<p th:each="user : ${users}" th:text="${user.name}"></p>` | for each문. list 안에 있는 객체가 obj로 맵핑된다 |  
+  
 
 **사용 예제**  
 Table에서 사용시, 아래와 코드와 같이 혼합해서 사용이 가능합니다.  
@@ -130,13 +131,13 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 [그 밖에 사용 가능한 strings 메소드](https://www.thymeleaf.org/apidocs/thymeleaf/2.1.4.RELEASE/org/thymeleaf/expression/Strings.html)
 
 ## form  
-
+  
 | 종류 | 설명 |  
 |:--- | :--- |    
 | th:action | form 태그에서 해당 경로로 요청을 보낼 때 사용 |  
 | th:object | submit을 할 때, form의 데이터가 th:object에 설정해준 객체로 받아진다. |  
 | th:field | 각각 필드들을 매핑을 해주는 역할을 한다. 설정해 준 값으로, th:object에 설정해 준 객체의 내부와 매칭해준다. |  
-
+  
 ```HTML  
  <form th:action="@{/sign-up}" th:object="${signUpForm}" method="post">
     <div class="form-group">
@@ -155,22 +156,22 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 이런 식으로, each 문법을 사용해 select 옵션을 지정할 수 있다.
 
 ## url 관련  
-
+  
 | 종류 | 사용법 | 설명 |  
 |:--- | :--- | :--- |  
 | URL 연결 | `<a th:href="@{/**/**}">` | 서버 내의 특정 위치로 이동 |  
 | URL + 파라미터 | `<a th:href="@{/**/**(page=1)}">` | 고정적인 값을 넘길 때 |  
 | URL + 파라미터 | `<a th:href="@{/**/**(page=${list.num})">` | 서버에서 받아온 값을 넘길때 |  
-
+  
 ---  
 
 ## Utility  
-
+  
 | 종류 | 사용법 |  
 |:--- | :--- |  
 | 캘린더 객체 사용 | `<td th:text="${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm')}"></td>` |  
 | listJoin 객체 사용 | `th:value="${#strings.listJoin(tags, ',')}"` |  
-
+  
 
 > 위 문법은 아래의 코드를 구현한 것이다.  
 
