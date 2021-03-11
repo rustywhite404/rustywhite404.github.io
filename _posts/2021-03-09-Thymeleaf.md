@@ -48,7 +48,7 @@ tags:
 Table에서 사용시, 아래와 코드와 같이 혼합해서 사용이 가능합니다.  
 ${list}객체를 user가 받아 user 클래스 안에 있는 프로퍼티스 접근합니다.   
 
-```HTML  
+```html    
 <tbody id="docsTr">
      <tr th:if="${size} == '0'">
 		<td colspan=2>데이터가 없습니다.</td>
@@ -62,7 +62,7 @@ ${list}객체를 user가 받아 user 클래스 안에 있는 프로퍼티스 접
 **for문으로 받아온 객체값을 자바스크립트 변수에 넣을 때**  
 예) tr 태그 클릭시 화면이동 하고 싶을때, 특정 변수를 파라미터로 받아 값을 넘겨줄때!  
 th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) 그리고 getAttribute로 loadDetailView 함수 파라미터에 값을 넣어준다.  
-```HTML  
+```html    
 <tbody id="docsTr">
      <tr th:if="${size} == '0'">
 		<td colspan=2>데이터가 없습니다.</td>
@@ -77,7 +77,7 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 ```
 
 **요소 하나하나를 반복하면서 데이터를 뷰로 표현할 때**  
-```HTML
+```html  
 <div th:if="${family_group != null}">
     <div class="group_list_sub" th:each="group : ${family_group}">
         <h2 th:text="#{group.name}"></h2>
@@ -95,14 +95,14 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 ---  
 
 ## 배열/리스트  
-```HTML  
+```html    
 <img th:if="${#lists.size(diary.files) > 0}" th:src="${diary.files[0]}"/>
 ```  
 위 예제처럼 서버로부터 넘어온 diary.files 배열 데이터를 if문을 사용해 사이즈 체크한다. diary.files[0]처럼 특정 인덱스로 접근도 가능하다.   
 [그 밖에 사용 가능한 list 메소드](https://www.thymeleaf.org/apidocs/thymeleaf/3.0.0.RELEASE/index.html?org/thymeleaf/expression/Lists.html)
 
 ## switch case  
-```HTML
+```html  
 <div th:switch="${eventFvrDtl.fvrDvsCd}" class="coupon_gift">
     <p th:case="${#foConstants.FVR_DVS_CD_DISCOUNT}" class="cp cptype02">
         <th:block th:switch="${fvrKnd2Cd}">
@@ -138,7 +138,7 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 | th:object | submit을 할 때, form의 데이터가 th:object에 설정해준 객체로 받아진다. |  
 | th:field | 각각 필드들을 매핑을 해주는 역할을 한다. 설정해 준 값으로, th:object에 설정해 준 객체의 내부와 매칭해준다. |  
   
-```HTML  
+```html  
  <form th:action="@{/sign-up}" th:object="${signUpForm}" method="post">
     <div class="form-group">
         <label for="nickname">닉네임</label>
@@ -148,7 +148,7 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 ```
 
 ## select  
-```HTML
+```html  
 <select class="form-control" id="goods" name="goods">
     <option th:each="goodList : ${goodList}" th:value="${goodList.code}" th:text="${goodList.name}"></option>
 </select>
@@ -175,7 +175,7 @@ th:data 다음엔 아무이름이나 정해주면 된다. ( *th:data-별칭 ) �
 
 > 위 문법은 아래의 코드를 구현한 것이다.  
 
-```JAVA  
+```java    
 List<String> tags = List.of("Spring", "JPA");
 => Spring, JPA
 ```
