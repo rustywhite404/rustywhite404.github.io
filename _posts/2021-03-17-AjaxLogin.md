@@ -13,7 +13,7 @@ tags:
 ![이미지](https://i.imgur.com/0nDsj1s.png)  
 ![이미지2](https://i.imgur.com/RuTJDCX.png)  
   
-## 1. join.html에서 id를 입력받는 폼 만들기  
+## join.html에서 id를 입력받는 폼 만들기  
 ```html
 <input type="text" id = "id" name="id" placeholder="your id" autocomplete="username" required oninput = "checkId()" /> 
 <span class="id_ok">사용 가능한 아이디입니다.</span>
@@ -28,7 +28,7 @@ tags:
 
 ---  
 
-## 2. css 수정  
+## css 수정  
 ```css  
 .id_ok{color:#fff; display: none;}
 .id_already{color:#6A82FB; display: none;}
@@ -37,7 +37,7 @@ id_ok는 사용 가능한 아이디일 때, id_already는 이미 사용중인 �
 
 --- 
 
-## 3.Ajax 처리를 위한 준비  
+## Ajax 처리를 위한 준비  
 
 ```html  
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -63,7 +63,7 @@ id값이 id인 폼에 들어온 내용을 다시 var id에 저장하고, 그 값
 
 ---  
 
-## 4. Controller 영역의 처리  
+## Controller 영역의 처리  
 
 ```java  
 @Controller
@@ -92,9 +92,11 @@ public class UserController {
 
 ---  
 
-## 5. Service, Repository 영역의 처리  
+## Service, Repository 영역의 처리  
 
 Service, Repository에 메소드를 바로 구현하지 않고 인터페이스를 사용하여 구현하였기 때문에, 파일은 총 4개가 된다(Service, ServiceImpl, Repository, RepositoryImpl).  
+<br />  
+
 **1. UserService**  
 ```java  
 public interface UserService {
@@ -147,13 +149,13 @@ public class UserRepositoryImpl implements UserRepository {
     }
 }
 ```  
-> NAMESPACE의 경우 꼭 본인이 사용하는 Mapper의 namespace를 적어야 한다.  
+> NAMESPACE의 경우 **꼭 본인이 사용하는 Mapper의 namespace**를 적어야 한다.  
 
 Service와 Repository는 딱히 설명할 부분이 없는 것 같다. 바로 Mapper로 넘어가보자.
 
 --- 
 
-## 6. Mapper의 SQL 구문 처리  
+## Mapper의 SQL 구문 처리  
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -173,7 +175,7 @@ SQL 구문을 확인해보면, USER 테이블에서 id가 #{id}(전달받은 id)
 
 ---  
 
-## 7. 다시 스크립트로 돌아가서  
+## 다시 스크립트로 돌아가서  
 
 ```html
 <script type="text/javascript">
@@ -203,7 +205,7 @@ SQL 구문을 확인해보면, USER 테이블에서 id가 #{id}(전달받은 id)
 
 ---  
 
-## 8. 결과 확인  
+## 결과 확인  
 ![결과1](https://i.imgur.com/16iFi7o.png)  
 cnt가 1일 경우, 이미 해당 id가 존재한다는 뜻이므로 id_already가 활성화 된다.  
 ![결과2](https://i.imgur.com/GoJgC0h.png)  
