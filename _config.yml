@@ -6,7 +6,7 @@
 # Site
 title: STAY BEAUTIFUL
 subtitle:
-description: 개발 공부 기록
+description: 흐릿한 잉크가 뚜렷한 기억보다 낫다.
 author: 연정
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
@@ -105,11 +105,14 @@ copyright: true
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true 
+
+gems:
+   - jekyll-sitemap
 
 # If true, will add site-subtitle to index page, added in jekyll config.
-# subtitle: Subtitle
-index_with_subtitle: false
+subtitle: Subtitle 
+index_with_subtitle: false 
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -122,7 +125,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  #sitemap: /sitemap.xml
+  sitemap: /sitemap.xml
   #commonweal: /404.html
 
 
