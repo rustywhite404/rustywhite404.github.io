@@ -1,5 +1,6 @@
 ---
-title: (JAVA) 문자열을 나누는 split(), subString()    
+title: (JAVA) 문자열을 나누는 split(), subString() 
+description: "문자열을 나누는 방법을 알아보자"   
 date: 2021-02-27 16:21:00
 categories: 
 - JAVA
