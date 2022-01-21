@@ -174,4 +174,6 @@ since: 2013
 
 ## Browser support
 
-![Browser support](http://iissnan.com/nexus/next/browser-support.png)
+:bowtie::smile::laughing::blush::smiley::relaxed::smirk:
+:heart_eyes::kissing_heart::kissing_closed_eyes::flushed::relieved::satisfied::grin:
+
