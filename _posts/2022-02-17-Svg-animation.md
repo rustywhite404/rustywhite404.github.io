@@ -11,7 +11,7 @@ tags:
 ![이미지](https://i.imgur.com/sXEmBGw.jpg)  
 
 
-이런 SVG 라인 이미지를 사용해서 [이런 효과를 만들 수 있다](https://rustywhite404.github.io/release-shop/svg.html) 
+이런 SVG 라인 이미지를 사용해서 [이런 효과를 만들 수 있다](https://rustywhite404.github.io/svg_animation.html) 
 <br/>
 
 ## 일단 SVG 이미지를 준비한다    
