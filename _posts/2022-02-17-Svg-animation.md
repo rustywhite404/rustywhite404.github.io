@@ -1,6 +1,6 @@
 ---
 title: SVG 이미지로 CSS 라인 애니메이션 만들기    
-date: 2022-02-17 15:32:00
+date: 2022-02-17 15:27:00
 categories: CSS 
 tags:
 - CSS
