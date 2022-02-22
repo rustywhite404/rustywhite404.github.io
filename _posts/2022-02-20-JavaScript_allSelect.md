@@ -86,10 +86,11 @@ function test(o) {
 	    <input type="checkbox" />이메일 수신 동의
 	    <input type="checkbox" />문자 수신 동의
 	    <input type="checkbox" />개인정보 동의
-	 </div>
-	 <button class="agree-btn">전체동의</button>  
+</div>  
+<button class="agree-btn">전체동의</button>  
 <br />  
 
+  
 ```html  
 <body>
 	<div class="container">
