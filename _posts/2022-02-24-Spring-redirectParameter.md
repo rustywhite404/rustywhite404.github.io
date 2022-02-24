@@ -1,13 +1,14 @@
 ---
-title: (SPRING) redirect 할 때 parameter 넘기는 법      
+title: (SPRING)redirect 할 때 parameter 넘기는 법   
 date: 2022-02-24 17:54:00
-categories: 
-- Spring
+categories: Spring 
+published: true 
 tags:
-- Spring 
+- Spring   
 ---
+## 스프링에서 redirect 할 때 parameter 넘기기
 
-### 스프링에서 redirect 할 때 parameter 넘기기   
+   
 스프링 컨트롤러에서 redirect를 해야 하는 경우가 종종 있다. 이 경우에는 평소의 GET/POST 전송을 할 때처럼 model attribute를 사용하기가 힘들다. 어떻게 해야 할까?  
 ![이미지](https://i.imgur.com/D8PXj6I.png)  
 (이상한 짓 하지 말자)  
