@@ -1,11 +1,11 @@
 ---
-title: 어떤 라이브러리가 어떤 jar 사용중인지 확인하는 법     
+title: 리눅스 환경에서 MySQL 데이터 백업 및 복구하기   
 date: 2022-03-18 13:11:12
 categories: MySQL, Linux 
 published: true 
 tags:
 - MySQL  
-- Linux   
+- Linux  
 ---
 
 ## 리눅스 환경에서 MySQL 데이터 백업 및 복구하기     
