@@ -4,8 +4,8 @@ date: 2022-02-24 17:54:00
 categories: Spring 
 published: true 
 tags:
-- Spring   
----  
+- Spring  
+---
 
 ## 스프링에서 redirect 할 때 parameter 넘기기
 
