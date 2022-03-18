@@ -1,6 +1,6 @@
 ---
 title: 리눅스 환경에서 MySQL 데이터 백업 및 복구하기     
-date: 2022-03-18 13:11:12
+date: 2022-03-16 13:11:12
 categories: SQL, MySQL, Linux 
 tags:
 - MySQL
