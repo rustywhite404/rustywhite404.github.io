@@ -1,11 +1,10 @@
 ---
-title: 리눅스 환경2에서 MySQL 데이터 백업 및 복구하기     
-date: 2022-03-16 13:11:12
-categories: SQL, MySQL, Linux 
+title: MYSQL에서 INDEX를 추가, 삭제, 확인하기(+성능개선)     
+date: 2022-04-26 13:11:12
+categories: SQL, MySQL 
 tags:
 - MySQL
 - SQL
-- Linux
 ---
 
 ## MYSQL에서 INDEX를 추가, 삭제, 확인하기      
