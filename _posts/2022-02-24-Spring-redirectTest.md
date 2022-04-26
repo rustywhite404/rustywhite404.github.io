@@ -1,5 +1,5 @@
 ---
-title: (MySQL) STRAIGHT_JOIN을 알아보자   
+title: (m)redirect 할 때 parameter22222222 넘기는 법   
 date: 2022-04-26 17:54:00
 categories: Spring 
 published: true 
@@ -7,6 +7,8 @@ tags:
 - Spring  
 ---
 
-## STRAIGHT_JOIN이란? 
+## 내용  
 
-왼쪽 테이블을 먼저 읽는 JOIN이다. 
+텍스트  
+
+---
