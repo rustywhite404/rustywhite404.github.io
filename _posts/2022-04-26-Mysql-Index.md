@@ -1,11 +1,10 @@
 ---
 title: MYSQL에서 INDEX를 추가, 삭제, 확인하기(+성능개선)     
 date: 2022-04-16 13:11:12
-categories: SQL, MySQL, Linux 
+categories: SQL, MySQL 
 tags:
 - MySQL
 - SQL
-- Linux
 ---
 
 ## MYSQL에서 INDEX를 추가, 삭제, 확인하기      
