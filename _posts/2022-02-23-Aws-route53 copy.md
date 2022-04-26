@@ -1,5 +1,5 @@
 ---
-title: Route5322222222을 사용해 외부 도메인 아마존 계정에 연결하기   
+title: 타이틀   
 date: 2022-02-23 00:12:00
 categories: AWS 
 published: true 
