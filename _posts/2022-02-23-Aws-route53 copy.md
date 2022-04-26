@@ -1,10 +1,11 @@
 ---
-title: 타이틀   
+title: 타이틀01   
 date: 2022-02-23 00:12:00
-categories: AWS 
+categories: JAVA, SPRING 
 published: true 
 tags:
-- AWS  
+- JAVA
+- SPRING  
 ---
 
 ## Route53을 사용해 외부 도메인 아마존 계정에 연결하기     
