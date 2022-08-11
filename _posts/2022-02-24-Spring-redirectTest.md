@@ -1,6 +1,6 @@
 ---
-title: (m)redirect 할 때 parameter22222222 넘기는 법   
-date: 2022-04-26 17:54:00
+title: git 사용법을 쉽게 정리해보자   
+date: 2022-08-11 17:54:00
 categories: JAVA, Algorithm 
 published: true 
 tags:
