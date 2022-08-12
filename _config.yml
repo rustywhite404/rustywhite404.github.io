@@ -11,8 +11,9 @@ author: 연정
 image: "https://i.imgur.com/WXQA35w.png" 
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
+timezone: Asia/Seoul
 date_format: '%Y-%m-%d'
-futrue: true 
+future: true 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url: https://rustywhite404.github.io
