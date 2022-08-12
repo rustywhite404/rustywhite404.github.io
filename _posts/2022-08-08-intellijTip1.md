@@ -1,13 +1,13 @@
 ---
-title: Intelli J 단축키를 알아보자   
-date: 2022-08-11 00:12:00
+title: Intelli J 단축키를 알아보자(기초)  
+date: 2022-08-08 00:12:00
 categories: etc 
 published: true 
 tags:
 - IntelliJ  
 ---
 
-## Git      
+## Intelli J 단축키를 알아보자     
 STS와 다소 차이가 있다보니 쓸 때 마다 이게 뭐더라 하고 기억을 더듬게 되어서 정리해 봤다. 
 
 

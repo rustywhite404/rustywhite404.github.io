@@ -1,6 +1,6 @@
 ---
 title: Intelli J 단축키를 알아보자(응용)   
-date: 2022-04-27 00:12:00
+date: 2022-08-09 00:12:00
 categories: etc 
 published: true 
 tags:
