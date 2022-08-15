@@ -1,6 +1,6 @@
 ---
 title: 스프링부트에서 자주 사용하는 어노테이션 정리     
-date: 2022-08-12 09:53:00
+date: 2022-08-15 16:51:00
 categories: Spring 
 published: true 
 tags:
