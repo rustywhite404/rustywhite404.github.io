@@ -17,6 +17,8 @@ tags:
 ![이미지](https://i.imgur.com/3nE2Gy3.png) 
 (문제상황.jpg)  
 이전까지 똑같이 사용하던 JDK나 V3 문제는 아닌 것 같고, 에러 로그를 보면 gradle이 문제인 것 같았다. `gradle-wrapper.properties`에서 `distributionUrl`을 변경해주면 다른 그래들 버전으로 빌드를 시도할 수 있다고 해서 진행해보았다. 내 프로젝트들은 gradle 8.10, 8.6버전을 사용하고 있었는데 모두 8.5버전으로 변경했을 때 정상적으로 빌드되었다.  
+![이미지](https://i.imgur.com/2fhoziw.png) 
+![이미지](https://i.imgur.com/4CSCgGz.png) 
 
 ```
 distributionBase=GRADLE_USER_HOME
