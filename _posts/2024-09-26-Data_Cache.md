@@ -23,9 +23,8 @@ ex) 인기 있는 뉴스 기사 목록, 자주 조회되는 API 응답
 ex) 쇼핑몰에서 상품 목록을 빠르게 보여줘야 할 때
 
 단, **너무 자주 변하는 데이터나 항상 최신 상태가 필요한 데이터**에는 캐시를 적용하면 문제가 생길 수 있으니 적절히 사용해야 한다. 
-``` 
-성능 향상을 위한 캐싱을 공부하려고 참고한 강의와 블로그에서는 대형 쇼핑몰의 카테고리 목록, 실시간 제공이 필요하지 않은 대시보드 데이터, 지하철 노선도, 조직도 등의 데이터에 캐싱을 적용했다. 
-``` 
+
+> 성능 향상을 위한 캐싱을 공부하려고 참고한 강의와 블로그에서는 대형 쇼핑몰의 카테고리 목록, 실시간 제공이 필요하지 않은 대시보드 데이터, 지하철 노선도, 조직도 등의 데이터에 캐싱을 적용했다.  
 
 나는 주로 1번 케이스에서 캐싱 처리를 많이 해 보았는데, 2번이나 3번 케이스에서의 캐싱 처리와 전후 비교법을 배우고 싶었다. 방법을 찾아보며 공부한 내용을 정리해 둔다. 
 
@@ -34,7 +33,8 @@ ex) 쇼핑몰에서 상품 목록을 빠르게 보여줘야 할 때
 
 1. (Maven 프로젝트 기준) pom.xml에 아래 의존성을 추가한다.
 ![이미지](https://i.imgur.com/0zOPWur.png)  
- ```  
+
+```  
 <!-- cache -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,10 +46,10 @@ ex) 쇼핑몰에서 상품 목록을 빠르게 보여줘야 할 때
         </dependency>
 
 ```   
-
+  
 2. ehcache.xml을 추가해 캐시 환경설정을 해준다. 
 ![이미지](https://i.imgur.com/0zOPWur.png)  
-```xml
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache>
 
@@ -107,7 +107,7 @@ ex) **`LRU` , `LFU` , `FIFO`**
 EhCache를 사용할 수 있도록 **EhCacheManagerFactoryBean**과 **EhCacheCacheManger**를 Bean으로 등록해준다. 
 ![이미지](https://i.imgur.com/LoVJyVd.png)  
 
-```JAVA
+```java 
 package com.example.performancecache.config;
 
 import org.springframework.cache.CacheManager;
@@ -148,7 +148,8 @@ public class EhcacheConfiguration {
     - ehcache.xml 구성 파일에서 **`<cache>`** 엘리먼트의 **`name`** 속성과 일치 시켜주기  
     
     ![이미지](https://i.imgur.com/nND02wA.png) 
-```JAVA 
+
+```java 
 @Override
 @Cacheable(value = "NoticeReadMapper.findAll")
 @Transactional
@@ -162,7 +163,8 @@ public List<Notice> getAllNotices() {
 
 ### 2. 정상적으로 작동하는지 테스트 해보기   
 ![이미지](https://i.imgur.com/vZKf7VJ.png) 
-```JAVA  
+
+```java 
 import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
 import org.springframework.cache.CacheManager;
@@ -247,8 +249,5 @@ public Object getSpecificCacheData(@PathVariable String cacheName, @PathVariable
 2. `cacheManager`를 통해 캐시를 가져오고, 그 캐시 안에서 해당 키에 해당하는 데이터를 찾아 반환한다. 만약 해당 키나 캐시 이름이 없으면 적절한 에러 메시지를 반환하도록 처리되어 있다.  
 ex) `/api/ehcache/NoticeReadMapper.findAll/123`처럼 호출하면, `NoticeReadMapper.findAll` 캐시에서 키가 `123`인 데이터를 조회할 수 있다.
 
-```
-***캐시의 키 이름은 어떻게 지정되는 걸까***  
+> ***캐시의 키 이름은 어떻게 지정되는 걸까***  
 아직 낯선 내용이다 보니 파생되는 궁금증이 많아 알아보았다. 캐시의 키는 `@Cacheable` 어노테이션을 사용할 때 자동으로 생성되거나, 원하는대로 커스터마이징도 가능하다고 한다. 다음 포스팅에서 key와 condition 옵션을 활용하는 법도 정리해 봐야겠다. 
-
-```
