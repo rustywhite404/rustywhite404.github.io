@@ -1,7 +1,7 @@
 ---
 title: 자바스크립트로 업로드 파일 확장자 체크하기 + 더 쉬운 방법    
 date: 2022-01-30 11:40:00
-categories: Javascript, Html 
+categories: Javascript Html 
 tags:
 - Javascript
 - Html 

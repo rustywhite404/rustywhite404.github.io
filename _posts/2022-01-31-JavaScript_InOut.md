@@ -1,7 +1,7 @@
 ---
 title: innerHTML, innerText, outerHTML, outerText 은 어떻게 다른가    
 date: 2022-01-31 21:28:30
-categories: Javascript, Html 
+categories: Javascript Html 
 tags:
 - Javascript
 - Html 
