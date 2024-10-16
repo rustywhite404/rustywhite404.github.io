@@ -1,7 +1,7 @@
 ---
 title: (Spring/Ajax)실시간으로 아이디 중복 체크하기     
 date: 2021-03-17 21:25:00
-categories: Spring, SpringBoot, Ajax
+categories: Spring 
 tags:
 - Spring  
 - Ajax  

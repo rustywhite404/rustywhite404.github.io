@@ -1,7 +1,7 @@
 ---
 title: 내 git 블로그 포스트는 왜 안보이는 걸까(해결법)   
 date: 2022-08-12 09:53:00
-categories: Tip, etc 
+categories: Tip etc 
 published: true 
 tags:
 - etc   
