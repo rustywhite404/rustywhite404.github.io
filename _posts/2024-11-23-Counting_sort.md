@@ -144,7 +144,7 @@ Arrays.sort()로도 백준 문제는 통과가 가능하지만 라이브러리�
     
     ---
     
-    ### 이 문제에서 Arrays.sort()와 Counting Sort 비교  
+### 이 문제에서 Arrays.sort()와 Counting Sort 비교  
     
     1. 시간 복잡도  
         - Arrays.sort() : 시간 복잡도가 O(N log N)이므로, N이 10,000,000이면 약 2억 번 이상의 연산이 필요하다.  
