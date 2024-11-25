@@ -7,7 +7,7 @@ tags:
 - tip    
 ---
 
-캐싱으로 조회 성능 개선하기 2 : (https://rustywhite404.github.io/etc/2024/09/27/Data_Cache2/)  
+캐싱으로 조회 성능 개선하기 2 : <https://rustywhite404.github.io/etc/2024/09/27/Data_Cache2/>  
 앞선 포스팅에서 캐싱 처리를 통해 데이터 성능 향상을 도모했고 nGrinder를 통해 전후 비교를 해보았다. 이번에는 Scouter를 이용해서 캐싱 처리 전후 비교를 해보려 한다.  
 
 ### 1. 스카우터 실행  
