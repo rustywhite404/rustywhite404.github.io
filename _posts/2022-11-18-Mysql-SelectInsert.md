@@ -1,7 +1,7 @@
 ---
 title: SELECT한 내용을 INSERT나 UPDATE시켜보자 
 date: 2022-11-18 16:08:00
-categories: SQL, MySQL  
+categories: SQL  
 published: true 
 tags:
 - SQL 

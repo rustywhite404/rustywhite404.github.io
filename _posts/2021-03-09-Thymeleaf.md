@@ -1,7 +1,7 @@
 ---
 title: 타임리프Thymeleaf 문법을 알아보자 1    
 date: 2021-03-09 22:11:00
-categories: Spring, SpringBoot, Thymeleaf
+categories: Spring
 tags:
 - Spring 
 - Thymeleaf 

@@ -1,10 +1,10 @@
 ---
 title: 도커 실행 시 repository does not exist or may require 'docker login' ~만 반복적으로 뜨는 문제 해결  
 date: 2023-03-24 11:44:00
-categories: docker   
+categories: Docker   
 published: true 
 tags:
-- docker  
+- Docker  
 ---
 
 도커에 리눅스 이미지를 올려서 실행해야 하는 상황이었다. 이미지 pull 받고 컨테이너 생성까지 무사히 됐는데 컨테이너 실행이 안 되는 문제가 발생했다. 결과적으로 도커 명령어에 대한 이해가 부족해서 생긴 문제였는데, 에러 메시지나 검색해서 나오는 도커 컨테이너 실행 순서 예제로는 해결이 안 됐었기 떄문에 다시 이런 경우가 발생하지 않도록 기록해둔다. 

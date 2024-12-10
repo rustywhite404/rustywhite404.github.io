@@ -1,10 +1,10 @@
 ---
 title: 자주 쓰이는 날짜 형식 변환 모음
 date: 2022-11-15 00:21:00
-categories: java  
+categories: JAVA  
 published: true 
 tags:
-- java 
+- JAVA 
 ---
 
 

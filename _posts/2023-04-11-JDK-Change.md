@@ -1,10 +1,10 @@
 ---
 title: JDK 여러개를 편하게 전환하는 방법(자바 버전 변경 방법!)
 date: 2023-04-11 13:20:00
-categories: java   
+categories: JAVA   
 published: true 
 tags:
-- java
+- JAVA 
 - tip    
 ---
 

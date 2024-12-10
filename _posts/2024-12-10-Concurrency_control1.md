@@ -5,7 +5,8 @@ categories: Spring
 published: true 
 tags:
 - Spring     
-- 동시성제어         
+- 동시성제어   
+- 성능개선       
 ---  
 
 ### 동시성 제어란 어떤 상황에서 필요할까

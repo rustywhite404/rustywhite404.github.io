@@ -1,7 +1,7 @@
 ---
 title: Third party 써드파티란?     
 date: 2021-04-29 21:13:00
-categories: IT, 기초지식 
+categories: IT  
 tags:
 - IT
 - 기초지식

@@ -1,7 +1,7 @@
 ---
 title: 연속된 줄바꿈(엔터) 한 번으로 바꾸기(자바스크립트)   
 date: 2022-02-09 12:39:00
-categories: CSS, Javascript 
+categories: Javascript 
 published: true 
 tags:
 - CSS  
