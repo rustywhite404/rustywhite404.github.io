@@ -17,7 +17,7 @@ tags:
 나는 `ngrinder-controller-3.5.9-p1.war` 버전을 사용했다.  
 
 1. controller 실행  
-war파일을 다운로드한 디렉토리 경로에서 cmd를 열고 `java -jar {war파일명} --port=8300`을 입력한다. (ex. 'java -jar ngrinder-controller-3.5.9-p1.war --port=8300)  
+war파일을 다운로드한 디렉토리 경로에서 cmd를 열고 `java -jar {war파일명} --port=8300`을 입력한다. (ex. 'java -jar ngrinder-controller-3.5.9-p1.war --port=8300, 안 되면 'java -jar ngrinder-controller-3.5.5-p1.war --port 8300' 으로 시도)
 
 2. 애플리케이션 접속  
 ![이미지](https://i.imgur.com/o4FYug2.png)  
