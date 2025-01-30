@@ -10,7 +10,8 @@ tags:
 ---  
 
 
-동시성 제어를 통해 레이스 컨디션을 해결하는 방법 1 : <https://rustywhite404.github.io/spring/2024/12/10/Concurrency_control1/>  
+동시성 제어를 통해 레이스 컨디션을 해결하는 방법 1 :  
+<https://rustywhite404.github.io/spring/2024/12/10/Concurrency_control1/>  
 앞서 Synchronized 을 이용한 동시성 제어 방법을 정리해보았고, 여기서는 데이터베이스 레벨의 락을 활용해 볼 예정이다. DB레벨 락은 아래와 같은 방식들이 있다. 하나씩 장단점과 사용법을 알아보자.  
 
 
