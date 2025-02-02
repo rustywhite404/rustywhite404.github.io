@@ -1,5 +1,5 @@
 ---
-title: 동시성 제어를 통해 레이스 컨디션을 해결하는 방법 2 - DB 락 활용       
+title: 동시성 제어를 통해 레이스 컨디션을 해결하는 방법 3 - Lettuce, Redisson 활용       
 date: 2025-01-29 14:10:58
 categories: Redis        
 published: true 
