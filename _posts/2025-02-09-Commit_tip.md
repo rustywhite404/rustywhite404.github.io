@@ -45,3 +45,6 @@ git-ccommit.ps1 파일을 원하는 폴더에 저장해 두고, 이 폴더를 �
 **환경 변수 추가 방법:**  
 Win + R → sysdm.cpl → 고급 탭 → 환경 변수 Path에 위에서 정한 폴더 경로를 추가 → PowerShell 재실행
 
+### 📌 4. 실행 결과 확인  
+이제 git-ccomit "날짜" -m "메시지" 로 날짜 변경이 가능하다.   
+![결과 확인](https://i.imgur.com/exqhRnZ.png)
