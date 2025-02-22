@@ -55,3 +55,38 @@ class Person {
 - 객체타입은 메모리 주소, 추가 메타데이터 등 더 많은 메모리가 사용된다.  
 따라서 다양한 값을 독립적으로 사용하는 경우에는 원시타입을 사용하는 게 더 메모리 효율성이 좋다.  
 > 다만 동일한 객체를 여러번 재사용 해야하는 상황이라면 원시 타입을 여러 번 생성하는 것보다 한 번 생성한 객체를 재사용 하는 게 더 효율적일 수 있다. 
+
+### 📌 알고 가면 좋을 것 : String은 원시타입일까, 객체일까?  
+결론부터 말하자면 Java에서 String은 객체다. 하지만 다른 언어에서는 원시타입일 수도 있다. 일단 자바를 기준으로 설명하고, 다른 언어들에 대해서도 알아보려 한다.  
+
+#### 왜 String은 원시 타입이 아닐까? 
+- 자바에서 String은 `java.lang.String` 클래스로 정의된 객체다. 따라서, String을 생성하면 내부적으로 힙에 저장되는 객체가 생성된다.  
+- `new String()`으로 생성이 가능하다. 원시 타입은 new 키워드 없이 값을 저장하지만, String은 `String word = new String()` 형태로 생성이 가능함(int, double 등의 원시 타입은 new로 생성이 불가능함). 
+- 원시 타입은 메서드를 가질 수 없지만, String은 `length()`, `toUpperCase()` 같은 여러 메서드를 가지고 있다. 
+
+#### 객체인데 왜 String word="단어"; 처럼 사용이 가능한 걸까?  
+String은 워낙 많이 사용되는 자료형이기 때문에, 특별하게 `String Constant Pool(문자열 풀)` 이라는 공간을 가지도록 해 준 것이다. 그래서 `String word="단어";` 처럼 리터럴 방식으로 String을 만들면 String Pool에 저장이 되도록 허용되었다. 같은 값의 String을 여러 번 만들면 String Pool에서 기존 값을 재사용하므로 메모리 절약이 가능하다. 하지만 `new String("단어")`로 만들면 힙 영역에 새로운 객체가 생성된다.  
+
+> 📌리터럴(Literal)이란 뭘까?  
+> 소스 코드에서 "값 자체"로 표현되는 데이터를 의미한다. 변수에 할당되는 고정된 값을 말한다고 보면 이해하기 쉽다. 
+> 예를 들어, int a = 10; 에서 10이 리터럴이다.  
+
+#### 자바에서 String은 객체인데, 다른 언어에서는 어떨까? 
+- JavaScript의 String은 원시 타입이지만 객체처럼 동작한다. 하지만 객체 형태의 String 메서드를 사용하면 내부적으로 객체로 변환(Boxing) 됨.  
+   ```javascript 
+    let str = "Hello"; // 원시 타입 (Primitive)
+    console.log(typeof str); // "string"
+
+    let objStr = new String("Hello"); // 객체 타입 (Object)
+    console.log(typeof objStr); // "object" 
+
+    //원시타입 문자열도 메서드(length, toUpperCase 등)를 사용하면 내부적으로 객체로 변환됨. 
+    let str = "Hello"; 
+    console.log(str.length); // 5 (Boxing: 임시 객체 생성)
+    console.log(str.toUpperCase()); // "HELLO"
+    ```
+
+- Python에서 String은 객체로 관리된다.  
+- C에서 String은 원시 타입이 아니라 char 배열로 관리된다(C에는 String 타입이 없음). 문자열을 다루려면 배열을 직접 다루거나 포인터를 사용해야 함. 
+- C++에서 String은 객체다. `std::string`을 사용해서 문자열을 객체처럼 다룰 수 있다. 
+
