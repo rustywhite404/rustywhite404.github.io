@@ -15,10 +15,8 @@ tags:
 
 ### POST 요청을 하기 위해 폼을 만들어보자      
 `write.html`에 간단한 입력 폼을 만들어보았다. 그리고 write.html을 호출하는 코드도 server.js에 추가해주어야 한다.  
-<details><summary>HTML 코드 보기(길어서 접음 )
-</summary>  
 
-```  
+```html   
 <!doctype html>
   <html lang="en">
     <head>
@@ -70,9 +68,7 @@ tags:
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
   </html>
-``` 
-</details> 
-     
+```      
 
 ```JS 
 app.get('/write', function(요청, 응답){
