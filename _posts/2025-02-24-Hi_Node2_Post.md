@@ -18,7 +18,7 @@ tags:
 <details><summary>HTML 코드 보기(길어서 접음 )
 </summary>  
 
-```html    
+```  
 <!doctype html>
   <html lang="en">
     <head>
@@ -71,7 +71,8 @@ tags:
     </body>
   </html>
 ``` 
-</details>  
+</details> 
+     
 
 ```JS 
 app.get('/write', function(요청, 응답){
