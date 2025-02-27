@@ -1,5 +1,5 @@
 ---
-title: Node.js로 POST API 만들기            
+title: Node.js로 POST API 만들기 2            
 date: 2025-02-25 20:34:34
 categories: NodeJS         
 published: true 
@@ -8,11 +8,10 @@ tags:
 ---  
 
 
-앞선 포스팅에서 NodeJS 설치와 간단한 GET API를 구현해보았다. 
-
+앞선 포스팅에서 NodeJS 설치와 간단한 GET API를 구현해보았다. 이번에는 POST 방식으로 데이터를 전송하는 방법을 알아보자.  
 [🙋‍♂️1. Node.js로 5분만에 API 만들기](https://rustywhite404.github.io/nodejs/2025/02/25/Hi_Node/#) 
 
-이번에는 POST 방식으로 데이터를 전송하는 방법을 알아보자.   
+  
 
 ### POST 요청을 하기 위해 폼을 만들어보자      
 `write.html`에 간단한 입력 폼을 만들어보았다. 그리고 write.html을 호출하는 코드도 server.js에 추가해주어야 한다.  
