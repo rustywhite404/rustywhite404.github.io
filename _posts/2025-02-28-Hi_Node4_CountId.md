@@ -1,5 +1,5 @@
 ---
-title: Node.js에 저장된 데이터에 인덱스 붙이기, 데이터 삭제하기기 4            
+title: Node.js에 저장된 데이터에 인덱스 붙이기, 데이터 삭제하기 4            
 date: 2025-02-28 21:10:24
 categories: NodeJS         
 published: true 
