@@ -72,6 +72,7 @@ plugins:
  - jemoji
  - jekyll-sitemap
  - jekyll-feed
+ - jekyll-seo-tag
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -127,6 +128,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
+  search: /search/
   # sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -591,7 +593,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
