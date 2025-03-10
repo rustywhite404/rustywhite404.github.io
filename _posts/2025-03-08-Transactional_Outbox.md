@@ -1,6 +1,6 @@
 ---
 title: 트랜잭셔널 아웃박스(Transactional Outbox) 패턴 알아보기                
-date: 2025-03-08 14:80:14
+date: 2025-03-08 14:09:14
 categories: Spring           
 published: true 
 tags:
