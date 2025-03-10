@@ -1,6 +1,6 @@
 ---
 title: 코드 리뷰는 어떻게 해야할까?                 
-date: 2025-03-07 22:08:14
+date: 2025-03-07 12:08:14
 categories: etc            
 published: true 
 tags:

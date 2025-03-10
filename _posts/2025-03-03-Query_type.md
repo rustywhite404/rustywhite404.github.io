@@ -1,7 +1,7 @@
 ---
 title: Native Query, Query Method, QueryDSL, JPQL 차이와 장단점 알아보기                 
-date: 2025-03-03 17:08:14
-categories: JPA Spring            
+date: 2025-03-03 12:08:14
+categories: JPA            
 published: true 
 tags:
 - JPA           
