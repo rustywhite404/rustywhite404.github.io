@@ -32,7 +32,7 @@ tags:
 
 ---
 
-### ✅ 예제 코드 (상세페이지 데이터 조회회)
+### ✅ 예제 코드 (상세페이지 데이터 조회)
 
 ```javascript
 app.get('/detail/:id', function (req, res) {
@@ -139,7 +139,8 @@ async function getData() {
     const result = await db.collection('post').findOne({ _id: 1 });
     console.log(result);
 }
-``` 
+```  
+
 ### ❗️ 자주 하는 실수 ###  
 - ❌ async 없이 await 사용 
 ```javascript 
@@ -151,7 +152,7 @@ async function getData() {
     const result = db.collection('post').findOne({ _id: 1 });
     console.log(result); // Promise { <pending> }
 } 
-``` 
+```  
 ### ✅ 올바른 예시  
 
 ```javascript
