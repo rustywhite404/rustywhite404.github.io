@@ -132,4 +132,35 @@ passport.deserializeUser(async function (아이디, done) {
 
 ### 테스트 : 정상 동작하는지 확인하기  
 이제 `localhost:8080`에서 아까 만들어 둔 계정 정보로 로그인을 시도한 후, 쿠키를 확인해보면 정상적으로 session이 생성되어 있는 것을 볼 수 있다. 
-![세션](https://i.imgur.com/PK1pM1i.png)
+![세션](https://i.imgur.com/PK1pM1i.png) 
+
+### 개발 5 : 로그인 한 유저만 볼 수 있는 페이지 만들기  
+로그인 기능을 만들었으니 로그인 한 유저만 볼 수 있는 페이지도 만들어 보면 좋겠다. 마이페이지 `mypage.ejs` 하나를 만들어보자. 아래와 같이 아주 심플한 내용만 있어도 괜찮다. 
+
+```js 
+<body>
+    <%- include('nav.html') %>
+    
+    <h1>My Page</h1>
+    <p><%= user.id%>의 마이페이지입니다.</p>
+</body>
+```
+
+위 ejs 페이지를 호출할 수 있도록 server.js에서 라우팅을 해주어야 한다. 이 때, 로그인 체크를 하려면 아래와 같이 작성할 수 있다. get 안에 `loginCheck`처럼 임의로 만든 미들웨어를 넣으면 /mypage 요청과 mypage.ejs 응답 사이에 loginCheck가 실행된다.  
+```js  
+app.get('/mypage', loginCheck, function (요청, 응답) {
+    console.log("로그인한 유저:", 요청.user); // 로그인한 유저 정보
+    응답.render('mypage.ejs', {user: 요청.user}) // 로그인한 유저 정보를 EJS로 전달
+}) 
+``` 
+server.js 아래쪽 어딘가에 `loginCheck`도 구현해보자. 이렇게 작성하면 끝이다. deserializeUser 함수에서 req.user에 사용자 정보를 미리 저장하도록 구현했기 때문이다. 즉 req.user는 deserializeUser가 보내준 로그인 유저의 정보라고 이해하면 된다. 
+
+```js 
+function loginCheck(req, res, next) {
+    if (req.user) { // 로그인 상태 확인. 
+        next(); // 다음 미들웨어로 이동
+    } else {
+        res.redirect('/login'); // 로그인 페이지로 리다이렉트
+    }
+}
+``` 
