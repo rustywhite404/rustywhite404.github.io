@@ -90,204 +90,216 @@ public class Chef {
 ### 3. 좀 더 실무에 가까운 예제        
 배달 음식 주문 시스템을 상정하고 예제를 만들어보았다.  
 1. 음식 정보가 들어갈 도메인 생성  
-```java 
-public class Item {
-    private String menu;
-    private int price;
-    private int amount;
-    private int tip;
-    public Item(String menu, int price, int amount, int tip) {
-        this.menu = menu;
-        this.price = price;
-        this.amount = amount;
-        this.tip = tip;
-    }
-    public String getMenu() {
-        return menu;
-    }
 
-    public int getPrice() {
-        return price;
-    }
+    ```java 
+    public class Item {
+        private String menu;
+        private int price;
+        private int amount;
+        private int tip;
+        public Item(String menu, int price, int amount, int tip) {
+            this.menu = menu;
+            this.price = price;
+            this.amount = amount;
+            this.tip = tip;
+        }
+        public String getMenu() {
+            return menu;
+        }
 
-    public int getAmount() {
-        return amount;
-    }
+        public int getPrice() {
+            return price;
+        }
 
-    public int getTip() {
-        return tip;
+        public int getAmount() {
+            return amount;
+        }
+
+        public int getTip() {
+            return tip;
+        }
     }
-}
-```
+    ```  
 2. `주문하기` 라는 인터페이스 만들기  
-```java  
-public interface OrderStrategy {
-    //주문 기능
-    void order(int totalPrice);
-}
-```  
+
+    ```java  
+    public interface OrderStrategy {
+        //주문 기능
+        void order(int totalPrice);
+    }
+    ```  
 3. `도보배달 주문`과 `택시배달 주문`으로 구체화 하기  
-```java  
-public class WalkDeliveryStrategy implements OrderStrategy {
 
-    private String name;
-    private String payType;
-    private boolean useCoupon;
-    private double discount;
+    ```java  
+    public class WalkDeliveryStrategy implements OrderStrategy {
 
-    public WalkDeliveryStrategy(String name, String payType, boolean useCoupon, double discount){
-        this.name = name;
-        this.payType = payType;
-        this.useCoupon = useCoupon;
-        this.discount = discount;
-    }
-    @Override
-    public void order(int totalPrice){
-        int lastPrice = totalPrice;
-        int discountPrice = (int)(totalPrice*discount);
-        if(useCoupon){
-            lastPrice = lastPrice-discountPrice;
+        private String name;
+        private String payType;
+        private boolean useCoupon;
+        private double discount;
+
+        public WalkDeliveryStrategy(String name, String payType, boolean useCoupon, double discount){
+            this.name = name;
+            this.payType = payType;
+            this.useCoupon = useCoupon;
+            this.discount = discount;
         }
-        System.out.println("도보 배달 시 총 지불금액은 "+lastPrice+"원입니다.");
+        @Override
+        public void order(int totalPrice){
+            int lastPrice = totalPrice;
+            int discountPrice = (int)(totalPrice*discount);
+            if(useCoupon){
+                lastPrice = lastPrice-discountPrice;
+            }
+            System.out.println("도보 배달 시 총 지불금액은 "+lastPrice+"원입니다.");
+        }
     }
-}
-``` 
+    ``` 
 
-```java  
-public class TaxiDeliveryStrategy implements OrderStrategy {
+    ```java  
+    public class TaxiDeliveryStrategy implements OrderStrategy {
 
-    private String name;
-    private String payType;
-    private String message;
+        private String name;
+        private String payType;
+        private String message;
 
-    public TaxiDeliveryStrategy(String name, String payType, String message){
-        this.name = name;
-        this.payType = payType;
-        this.message = message;
+        public TaxiDeliveryStrategy(String name, String payType, String message){
+            this.name = name;
+            this.payType = payType;
+            this.message = message;
+        }
+        @Override
+        public void order(int totalPrice) {
+            System.out.println("택시 배달 시 총 지불금액은 "+totalPrice+"원입니다.");
+        }
     }
-    @Override
-    public void order(int totalPrice) {
-        System.out.println("택시 배달 시 총 지불금액은 "+totalPrice+"원입니다.");
-    }
-}
-``` 
+    ```  
+
 4. 배달 방식을 결정하고 그에 따른 정보를 전달할 `장바구니` 만들기  
-```java  
-public class OrderCart {
-    List<Item> items = new ArrayList<>();
 
-    public void addItem(Item item){
-        items.add(item);
-    }
-    public void totalPrice(OrderStrategy orderStrategy){
-        int totalPrice = 0;
-        for(Item item : items){
-            totalPrice += item.getPrice()*item.getAmount()+item.getTip();
+    ```java  
+    public class OrderCart {
+        List<Item> items = new ArrayList<>();
+
+        public void addItem(Item item){
+            items.add(item);
         }
-        orderStrategy.order(totalPrice);
+        public void totalPrice(OrderStrategy orderStrategy){
+            int totalPrice = 0;
+            for(Item item : items){
+                totalPrice += item.getPrice()*item.getAmount()+item.getTip();
+            }
+            orderStrategy.order(totalPrice);
+        }
+
     }
 
-}
+    ``` 
 
-``` 
 5. 사용자가 정보를 장바구니에 전달한다  
-```java  
-public class User {
-    public static void main(String[] args) {
-        //주문카트 전략 컨텍스트 등록
-        OrderCart cart = new OrderCart();
 
-        //주문 메뉴
-        Item A = new Item("새우버거",2000,1,2000);
-        Item B = new Item("치즈피자", 5000,2,4000);
-        cart.addItem(A);
-        cart.addItem(B);
+    ```java  
+    public class User {
+        public static void main(String[] args) {
+            //주문카트 전략 컨텍스트 등록
+            OrderCart cart = new OrderCart();
 
-        cart.totalPrice(new TaxiDeliveryStrategy("김주문","현장결제","문 앞에 두고가주세요."));
-        cart.totalPrice(new WalkDeliveryStrategy("이배달", "카드결제",true,0.2));
+            //주문 메뉴
+            Item A = new Item("새우버거",2000,1,2000);
+            Item B = new Item("치즈피자", 5000,2,4000);
+            cart.addItem(A);
+            cart.addItem(B);
+
+            cart.totalPrice(new TaxiDeliveryStrategy("김주문","현장결제","문 앞에 두고가주세요."));
+            cart.totalPrice(new WalkDeliveryStrategy("이배달", "카드결제",true,0.2));
+        }
     }
-}
-``` 
+    ``` 
 
 ### 4. 테스트 코드에서는 어떻게 활용할까   
 여러가지 결과값이 나올 수 있는 테스트 상황을 가정해보자. 예를 들어 `패스워드가 8자리 이상 12자리 이하인지 아닌지`를 테스트 해야 한다고 치자. 글자수 1~12자리를 랜덤으로 출력하면 테스트 코드 결과가 어쩔때는 성공하고, 어쩔때는 실패해서 테스트 코드로 결과를 확인하기가 어렵다. 글자수가 무조건 8~12자리인 경우와 무조건 잘못된 경우를 나누어서 만들어 놓고 테스트하면 좀 더 쉽게 결과를 알 수 있을 것이다.  
 
-1. `패스워드 생성` 인터페이스 작성 
-```java  
-@FunctionalInterface
-public interface PasswordGenerator {
-    String generatePassword();
-}
+1. `패스워드 생성` 인터페이스 작성  
 
-```     
+    ```java  
+    @FunctionalInterface
+    public interface PasswordGenerator {
+        String generatePassword();
+    }
+
+    ```     
 2. `항상 성공` `항상 실패`하는 메서드 구체화  
-```java  
-public class CorrectFixedPasswordGenerator implements PasswordGenerator{
-    @Override
-    public String generatePassword() {
-        return "abcdefgh"; //8글자
-    }
-}
-```  
-```java  
-public class WrongFixedPasswordGenerator implements PasswordGenerator{
-    @Override
-    public String generatePassword() {
-        return "ab"; //2글자
-    }
-}
-```  
-3. 패스워드를 입력받고 정보를 전달할 Context 만들기  
-```java  
-public class User {
-    private String password;
-    public void initPassword(PasswordGenerator passwordGenerator){        
 
-        String randomPassword = passwordGenerator.generatePassword();
-        /*
-        비밀번호는 최소 8자 이상, 12자 이하여야 한다.
-         */
-        if(randomPassword.length()>=8 && randomPassword.length()<=12){
-            this.password = randomPassword;
+    ```java  
+    public class CorrectFixedPasswordGenerator implements PasswordGenerator{
+        @Override
+        public String generatePassword() {
+            return "abcdefgh"; //8글자
+        }
+    }
+    ```  
+    ```java  
+    public class WrongFixedPasswordGenerator implements PasswordGenerator{
+        @Override
+        public String generatePassword() {
+            return "ab"; //2글자
+        }
+    }
+    ```  
+
+3. 패스워드를 입력받고 정보를 전달할 Context 만들기  
+
+    ```java  
+    public class User {
+        private String password;
+        public void initPassword(PasswordGenerator passwordGenerator){        
+
+            String randomPassword = passwordGenerator.generatePassword();
+            /*
+            비밀번호는 최소 8자 이상, 12자 이하여야 한다.
+            */
+            if(randomPassword.length()>=8 && randomPassword.length()<=12){
+                this.password = randomPassword;
+            }
+        }
+
+        public String getPassword() {
+            return password;
         }
     }
 
-    public String getPassword() {
-        return password;
-    }
-}
-
-``` 
+    ``` 
 
 4. 테스트 코드 작성 후 실행  
-```java  
-class UserTest {
 
-    @DisplayName("패스워드를 초기화한다.")
-    @Test
-    void passwordTest() {
-        //given - User 객체가 주어졌다
-        User user = new User();
-        //when - 이 메서드를 호출했을 때
-        user.initPassword(new CorrectFixedPasswordGenerator());
-        //then
-        assertThat(user.getPassword()).isNotNull();
+    ```java  
+    class UserTest {
+
+        @DisplayName("패스워드를 초기화한다.")
+        @Test
+        void passwordTest() {
+            //given - User 객체가 주어졌다
+            User user = new User();
+            //when - 이 메서드를 호출했을 때
+            user.initPassword(new CorrectFixedPasswordGenerator());
+            //then
+            assertThat(user.getPassword()).isNotNull();
+        }
+
+        @DisplayName("패스워드가 요구사항에 부합하지 않아 초기화 되지 않는다.")
+        @Test
+        void passwordTest2() {
+            //given - User 객체가 주어졌다
+            User user = new User();
+            //when - 이 메서드를 호출했을 때
+            user.initPassword(new WrongFixedPasswordGenerator());
+            //WrongFixedPasswordGenerator는 메서드 하나만 가진 functional Interface기 때문에
+            // user.initPassword(()->"ab"));
+            // 이렇게 구현해도 동일하다.
+
+            //then
+            assertThat(user.getPassword()).isNull();
+
+        }
     }
-
-    @DisplayName("패스워드가 요구사항에 부합하지 않아 초기화 되지 않는다.")
-    @Test
-    void passwordTest2() {
-        //given - User 객체가 주어졌다
-        User user = new User();
-        //when - 이 메서드를 호출했을 때
-        user.initPassword(new WrongFixedPasswordGenerator());
-        //WrongFixedPasswordGenerator는 메서드 하나만 가진 functional Interface기 때문에
-        // user.initPassword(()->"ab"));
-        // 이렇게 구현해도 동일하다.
-
-        //then
-        assertThat(user.getPassword()).isNull();
-
-    }
-}
-```
+    ```
