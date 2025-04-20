@@ -1,6 +1,6 @@
 ---
 title: ［독서기록］ 가상 면접 사례로 배우는 대규모 시스템 설계 기초 5장                 
-date: 2025-04-07 16:23:48
+date: 2025-04-14 16:23:48
 categories: Book          
 published: true 
 tags:
